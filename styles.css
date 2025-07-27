@@ -1,1 +1,198 @@
 /*  your css code here. If applicable */
+* {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.5s ease;
+        }
+        
+        h1 {
+            color: #1a2a6c;
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .player-input {
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        .player-input label {
+            display: block;
+            font-weight: 600;
+            color: #1a2a6c;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .player-input input {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .player-input input:focus {
+            border-color: #1a2a6c;
+            outline: none;
+            box-shadow: 0 0 8px rgba(26, 42, 108, 0.3);
+        }
+        
+        #submit {
+            background: linear-gradient(to right, #1a2a6c, #b21f1f);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        #submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        #submit:active {
+            transform: translateY(1px);
+        }
+        
+        .message {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 25px 0;
+            min-height: 40px;
+            color: #1a2a6c;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(26, 42, 108, 0.1);
+        }
+        
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 25px auto;
+            max-width: 350px;
+        }
+        
+        .cell {
+            aspect-ratio: 1;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cell:hover {
+            background-color: #e9ecef;
+            transform: translateY(-3px);
+        }
+        
+        .cell.x {
+            color: #1a2a6c;
+        }
+        
+        .cell.o {
+            color: #b21f1f;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        #restart {
+            background: linear-gradient(to right, #1a2a6c, #b21f1f);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        #restart:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .winning-cell {
+            animation: pulse 1.5s infinite;
+            background-color: #d4edda;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .game-info {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(26, 42, 108, 0.05);
+            border-radius: 10px;
+        }
+        
+        .player-info {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .player-info span {
+            display: block;
+            margin-top: 5px;
+            color: #1a2a6c;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            .cell {
+                font-size: 2.8rem;
+            }
+        }
